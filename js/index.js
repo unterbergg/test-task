@@ -1,13 +1,15 @@
-document.addEventListener("DOMContentLoaded", () =>{
-    console.log('ready');
+document.addEventListener("DOMContentLoaded", () => {
 
     let counter = 0;
-    let timerId = true;
     let active = false;
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
                 entry.target.classList.add('visible');
             }
         });
