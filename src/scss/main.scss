@@ -84,7 +84,7 @@ p {
   &__circle {
     position: relative;
     display: flex;
-    border: 2px solid #D1CB28;
+    border: 0.388319px solid #D1CB28;
     border-radius: 50%;
 
     margin: 0 auto;
@@ -94,6 +94,7 @@ p {
     height: 32rem;
     transform: translateX(55%);
     @include respond-to('medium') {
+      border: 2px solid #D1CB28;
       padding: 4.25rem;
       width: 82em;
       height: 82rem;
