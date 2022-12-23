@@ -39,18 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     services.addEventListener("touchstart", function (e) {
         const items = document.querySelector('.services__list').querySelectorAll('li');
-        if (document.querySelector('.services__list').querySelectorAll('li.showing').length === 0) {
-            document.querySelector('body').classList.add('overflowHidden');
-            document.querySelector('.services__arrow').classList.toggle('hide');
-            services.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'end'
-                })
-        }
         if (counter < items.length) {
 
             e.preventDefault();
             e.stopPropagation();
+            services.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'end'
+                })
             if (active === false) {
                 active = true;
                 if ((counter-2) != items.length) {
