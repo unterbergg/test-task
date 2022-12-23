@@ -6,13 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                })
+                // entry.target.scrollIntoView({
+                //     behavior: 'smooth',
+                //     block: 'start'
+                // })
                 entry.target.classList.add('visible');
             }
         });
+    }, {
     });
     observer.observe(document.querySelector('.services'));
 
@@ -41,6 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (document.querySelector('.services__list').querySelectorAll('li.showing').length === 0) {
             document.querySelector('body').classList.add('overflowHidden');
             document.querySelector('.services__arrow').classList.toggle('hide');
+            services.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'end'
+                })
         }
         if (counter < items.length) {
 
