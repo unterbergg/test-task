@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     services.addEventListener("touchstart", function (e) {
         const items = document.querySelector('.services__list').querySelectorAll('li');
+        document.querySelector('.services__arrow').classList.toggle('hide');
         if (counter < items.length) {
 
             e.preventDefault();
